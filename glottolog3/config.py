@@ -162,6 +162,10 @@ class Endangered_Languages_Project(PartnerSite):
     domain = 'endangeredlanguages.com'
     img = 'ELP.png'
 
+    def href_label_img_alt(self, link):
+        label = '{0} at {1}'.format(link['label'], self.name) if link['label'] else self.name
+        return link['url'].replace('/lang/', '/elp-language/'), label, self.img, self.name
+
 
 class Wikipedia(PartnerSite):
     domain = 'en.wikipedia.org'
